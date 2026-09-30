@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CheckMix — Professional Vocal Assessment</title>
+<meta name="description" content="Premium vocal assessment by certified coaches. Know your level, understand your strengths, and protect your voice.">
+
+<!-- Favicon -->
+<link rel="icon" href="/favicon.ico">
+
+<!-- Open Graph -->
+<meta property="og:title" content="CheckMix — Professional Vocal Assessment">
+<meta property="og:description" content="Premium vocal assessment by certified coaches. Know your level, understand your strengths, and protect your voice.">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CheckMix — Professional Vocal Assessment">
+<meta name="twitter:description" content="Premium vocal assessment by certified coaches. Know your level, understand your strengths, and protect your voice.">
+
+<!-- SEO -->
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://checkmix.com/">
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] },
+      colors: {
+        ink: '#0A0A0B',
+        muted: '#71717A',
+        line: '#E4E4E7',
+        accent: '#0F766E',
+        clinical: '#0F2E1F',
+      },
+      animation: {
+        'fade-up': 'fadeUp .7s ease forwards',
+      },
+      keyframes: {
+        fadeUp: { from: { opacity: 0, transform: 'translateY(20px)' }, to: { opacity: 1, transform: 'translateY(0)' } },
+      },
+    },
+  },
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js" defer></script>
+<style>
+html { scroll-behavior: smooth; }
+body { -webkit-font-smoothing: antialiased; }
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* Premium hover — 250ms */
+.btn-premium {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+.btn-premium:hover {
+  transform: translateY(-2px);
+}
+.btn-premium.btn-dark {
+  box-shadow: 0 1px 3px rgba(10, 10, 11, 0.08);
+}
+.btn-premium.btn-dark:hover {
+  background-color: #27272A;
+  box-shadow: 0 6px 20px rgba(10, 10, 11, 0.18);
+}
+.btn-premium.btn-accent {
+  box-shadow: 0 2px 8px rgba(15, 118, 110, 0.18);
+}
+.btn-premium.btn-accent:hover {
+  background-color: #119688;
+  box-shadow: 0 6px 22px rgba(15, 118, 110, 0.28);
+}
+.btn-premium.btn-light {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+.btn-premium.btn-light:hover {
+  background-color: #FAFAFA;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-premium {
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.card-premium:hover {
+  transform: translateY(-3px);
+  border-color: #BFDBFE;
+  box-shadow: 0 12px 36px rgba(10, 10, 11, 0.08);
+}
+.card-premium.card-accent-border:hover {
+  border-color: #7DD3FC;
+  box-shadow: 0 14px 40px rgba(15, 118, 110, 0.12);
+}
+
+.faq-item .faq-btn {
+  transition: background-color 0.25s ease;
+}
+.faq-item:hover .faq-btn {
+  background-color: #F7FAFC;
+}
+</style>
+</head>
+<body class="bg-white text-ink font-sans antialiased">
+
+<!-- NAV -->
+<header class="fixed top-0 inset-x-0 z-50 bg-white/80 backdrop-blur-md border-b border-line">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+    <a href="#" class="text-[15px] font-semibold tracking-tight">Check<span class="text-accent">Mix</span></a>
+    <button
+      id="menu-toggle"
+      class="p-2 focus:outline-none"
+      aria-label="Open menu"
+      aria-expanded="false"
+      aria-controls="menu-overlay"
+    >
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- Menu Overlay -->
+<div
+  id="menu-overlay"
+  class="fixed inset-0 z-40 hidden"
+  aria-hidden="true"
+>
+  <div class="absolute inset-0 bg-black/50" id="menu-backdrop"></div>
+  <div
+    id="menu-panel"
+    class="absolute right-0 top-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out"
+  >
+    <div class="p-6">
+      <button
+        id="menu-close"
+        class="absolute top-4 right-4 p-2 focus:outline-none"
+        aria-label="Close menu"
+      >
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+      <nav class="mt-8 flex flex-col gap-6">
+        <a href="#" class="text-[15px] font-medium text-ink hover:text-accent transition-colors menu-link">Home</a>
+        <a href="#features" class="text-[15px] font-medium text-ink hover:text-accent transition-colors menu-link">Features</a>
+        <a href="#pricing" class="text-[15px] font-medium text-ink hover:text-accent transition-colors menu-link">Pricing</a>
+        <a href="#report" class="text-[15px] font-medium text-ink hover:text-accent transition-colors menu-link">Sample Report</a>
+        <a href="#faq" class="text-[15px] font-medium text-ink hover:text-accent transition-colors menu-link">FAQ</a>
+        <a href="#contact" class="text-[15px] font-medium text-ink hover:text-accent transition-colors menu-link">Contact</a>
+      </nav>
+    </div>
+  </div>
+</div>
+
+<main>
+
+<!-- HERO -->
+<section class="pt-32 pb-20 md:pt-40 md:pb-28 px-6">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="animate-fade-up">
+      <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-accent mb-6">Professional Vocal Assessment</p>
+      <h1 class="text-4xl md:text-[52px] font-bold tracking-tight leading-[1.08] mb-6">
+        Professional Vocal Assessment<br>for Serious Singers
+      </h1>
+      <p class="text-[17px] text-muted leading-relaxed mb-8 max-w-md">
+        Receive a professional vocal assessment, personalized feedback, and practical training recommendations from experienced vocal coaches.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="https://www.paypal.com/ncp/payment/JQN5DDHAYQ33Y" target="_blank" rel="noopener noreferrer" class="btn-premium btn-accent inline-flex items-center justify-center bg-accent text-white text-sm font-semibold px-6 py-3.5 rounded-xl">
+          Buy Now — $300
+        </a>
+        <a href="https://www.paypal.com/ncp/payment/R7GTRG9PE6GE2" target="_blank" rel="noopener noreferrer" class="btn-premium btn-dark inline-flex items-center justify-center bg-ink text-white text-sm font-semibold px-6 py-3.5 rounded-xl">
+          Buy Assessment + Full Chorus Mix — $500
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-6 mt-10 text-xs text-muted">
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Professional Vocal Coach Review</span>
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>7–14 Business Days</span>
+        <span class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span>Secure payment with PayPal</span>
+      </div>
+    </div>
+
+    <!-- Report preview (hero) -->
+    <div class="animate-fade-up" style="animation-delay:.15s">
+      <div class="bg-white border border-line rounded-2xl shadow-[0_24px_80px_rgba(0,0,0,.08)] overflow-hidden">
+        <div class="bg-clinical text-white px-6 py-4 flex justify-between items-center">
+          <span class="text-sm font-semibold tracking-wide">CheckMix Assessment Report</span>
+          <span class="text-[10px] opacity-60 tracking-widest uppercase">Sample</span>
+        </div>
+        <div class="px-6 py-4 bg-[#F7FAF9] border-b border-line grid grid-cols-2 gap-4 text-xs">
+          <div><p class="text-muted uppercase tracking-wider text-[10px] mb-1">Overall Level</p><p class="font-semibold">Emerging Professional</p></div>
+          <div><p class="text-muted uppercase tracking-wider text-[10px] mb-1">Vocal Risk</p><p class="font-semibold">Moderate</p></div>
+        </div>
+        <div class="p-6 grid md:grid-cols-2 gap-6">
+          <div>
+            <p class="text-[10px] uppercase tracking-wider text-muted mb-3">Evaluation Framework</p>
+            <div class="relative w-full aspect-square max-w-[200px] mx-auto">
+              <canvas id="heroRadar"></canvas>
+            </div>
+          </div>
+          <div class="space-y-4 text-sm">
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-muted mb-2">Strengths</p>
+              <ul class="space-y-1.5 text-muted">
+                <li class="flex gap-2"><span class="text-accent">·</span>Strong pitch consistency</li>
+                <li class="flex gap-2"><span class="text-accent">·</span>Clean recording quality</li>
+                <li class="flex gap-2"><span class="text-accent">·</span>Reliable breath support</li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-[10px] uppercase tracking-wider text-muted mb-2">Focus Areas</p>
+              <ul class="space-y-1.5 text-muted">
+                <li class="flex gap-2"><span class="text-accent">·</span>Upper register control</li>
+                <li class="flex gap-2"><span class="text-accent">·</span>Dynamic expression</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="px-6 py-3 bg-clinical text-white/50 text-[10px] tracking-wider flex justify-between">
+          <span>CheckMix · Certified Coach Review</span>
+          <span>CONFIDENTIAL</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PILLARS -->
+<section class="py-16 px-6 bg-[#FAFAFA] border-y border-line">
+  <div class="max-w-6xl mx-auto grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+    <div class="text-center p-6">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent mb-2">01</p>
+      <h3 class="font-semibold mb-2">Know Your Level</h3>
+      <p class="text-sm text-muted leading-relaxed">Understand exactly where your vocals stand today.</p>
+    </div>
+    <div class="text-center p-6">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent mb-2">02</p>
+      <h3 class="font-semibold mb-2">Understand Your Strengths</h3>
+      <p class="text-sm text-muted leading-relaxed">Identify what already works in your performance.</p>
+    </div>
+    <div class="text-center p-6">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent mb-2">03</p>
+      <h3 class="font-semibold mb-2">Improve More Effectively</h3>
+      <p class="text-sm text-muted leading-relaxed">Train with clear, coach-written recommendations.</p>
+    </div>
+    <div class="text-center p-6">
+      <p class="text-xs font-semibold uppercase tracking-wider text-accent mb-2">04</p>
+      <h3 class="font-semibold mb-2">Protect Your Voice</h3>
+      <p class="text-sm text-muted leading-relaxed">Spot strain and fatigue risks before they escalate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-accent mb-4">Why CheckMix</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Human expertise, not automation</h2>
+      <p class="text-muted mt-4 max-w-lg mx-auto">CheckMix is a premium vocal assessment service for serious singers and VTubers. Submit one chorus — receive a comprehensive PDF report with coach-written feedback and practical improvement recommendations.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-5 reveal">
+      <div class="card-premium border border-line rounded-2xl p-8">
+        <div class="w-10 h-10 rounded-xl bg-teal-50 text-accent flex items-center justify-center text-sm font-bold mb-5">01</div>
+        <h3 class="font-semibold text-lg mb-3">Certified Vocal Coach Review</h3>
+        <p class="text-sm text-muted leading-relaxed">Every assessment is individually reviewed by an experienced vocal coach.</p>
+      </div>
+      <div class="card-premium border border-line rounded-2xl p-8">
+        <div class="w-10 h-10 rounded-xl bg-teal-50 text-accent flex items-center justify-center text-sm font-bold mb-5">02</div>
+        <h3 class="font-semibold text-lg mb-3">Personalized Feedback</h3>
+        <p class="text-sm text-muted leading-relaxed">Receive clear explanations of your strengths and improvement areas.</p>
+      </div>
+      <div class="card-premium border border-line rounded-2xl p-8">
+        <div class="w-10 h-10 rounded-xl bg-teal-50 text-accent flex items-center justify-center text-sm font-bold mb-5">03</div>
+        <h3 class="font-semibold text-lg mb-3">Training Recommendations</h3>
+        <p class="text-sm text-muted leading-relaxed">Get actionable exercises tailored to your vocal needs.</p>
+      </div>
+      <div class="card-premium border border-line rounded-2xl p-8">
+        <div class="w-10 h-10 rounded-xl bg-teal-50 text-accent flex items-center justify-center text-sm font-bold mb-5">04</div>
+        <h3 class="font-semibold text-lg mb-3">Vocal Risk Assessment</h3>
+        <p class="text-sm text-muted leading-relaxed">Understand potential strain and fatigue risks before they become problems.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FRAMEWORK -->
+<section id="framework" class="py-24 px-6 bg-[#FAFAFA] border-y border-line">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+    <div class="reveal">
+      <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-accent mb-4">Evaluation Framework</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-6">Five dimensions. Five levels. No scores.</h2>
+      <p class="text-muted leading-relaxed mb-8">The CheckMix Vocal Evaluation Framework assesses your recording across five core dimensions. Each area receives a qualitative rating — never a number.</p>
+      <div class="space-y-3 mb-8">
+        <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 rounded-full bg-accent"></span>Pitch</div>
+        <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 rounded-full bg-accent"></span>Timing</div>
+        <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 rounded-full bg-accent"></span>Expression</div>
+        <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 rounded-full bg-accent"></span>Recording Environment</div>
+        <div class="flex items-center gap-3 text-sm"><span class="w-2 h-2 rounded-full bg-accent"></span>Vocal Production</div>
+      </div>
+      <div class="flex flex-wrap gap-2">
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-line">Exceptional</span>
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-line">Excellent</span>
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-line">Strong</span>
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-line">Moderate</span>
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-white border border-line">Needs Work</span>
+      </div>
+    </div>
+    <div class="card-premium bg-white border border-line rounded-2xl p-8 shadow-sm reveal">
+      <p class="text-[10px] uppercase tracking-wider text-muted mb-4 text-center">Framework Visualization</p>
+      <div class="relative w-full max-w-[320px] mx-auto aspect-square">
+        <canvas id="frameworkRadar"></canvas>
+      </div>
+      <div class="grid grid-cols-1 gap-2 mt-6 text-sm">
+        <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">Pitch</span><span class="font-medium">Excellent</span></div>
+        <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">Timing</span><span class="font-medium">Strong</span></div>
+        <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">Expression</span><span class="font-medium">Strong</span></div>
+        <div class="flex justify-between py-2 border-b border-line"><span class="text-muted">Recording Environment</span><span class="font-medium">Excellent</span></div>
+        <div class="flex justify-between py-2"><span class="text-muted">Vocal Production</span><span class="font-medium">Strong</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SAMPLE REPORT -->
+<section id="report" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-accent mb-4">Deliverable</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Sample Report</h2>
+      <p class="text-muted mt-4">What you receive — a structured assessment document reviewed by your coach.</p>
+    </div>
+    <div class="max-w-3xl mx-auto border border-line rounded-2xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,.06)] reveal">
+      <div class="bg-clinical text-white px-8 py-5">
+        <p class="text-sm font-semibold">CheckMix Vocal Assessment Report</p>
+        <p class="text-[10px] opacity-60 mt-1 tracking-widest uppercase">Professional Vocal Assessment</p>
+      </div>
+      <div class="px-8 py-6 bg-[#F7FAF9] border-b border-line">
+        <p class="text-[10px] uppercase tracking-wider text-muted mb-1">Overall Vocal Level</p>
+        <p class="text-xl font-semibold">Emerging Professional</p>
+      </div>
+      <div class="px-8 py-6 border-b border-line">
+        <p class="text-[10px] uppercase tracking-wider text-muted mb-4">Assessment Summary</p>
+        <div class="grid sm:grid-cols-2 gap-3 text-sm">
+          <div class="flex justify-between py-2 px-3 bg-[#FAFAFA] rounded-lg"><span class="text-muted">Pitch</span><span class="font-medium">Excellent</span></div>
+          <div class="flex justify-between py-2 px-3 bg-[#FAFAFA] rounded-lg"><span class="text-muted">Timing</span><span class="font-medium">Strong</span></div>
+          <div class="flex justify-between py-2 px-3 bg-[#FAFAFA] rounded-lg"><span class="text-muted">Expression</span><span class="font-medium">Strong</span></div>
+          <div class="flex justify-between py-2 px-3 bg-[#FAFAFA] rounded-lg"><span class="text-muted">Recording Environment</span><span class="font-medium">Excellent</span></div>
+          <div class="flex justify-between py-2 px-3 bg-[#FAFAFA] rounded-lg sm:col-span-2"><span class="text-muted">Vocal Production</span><span class="font-medium">Strong</span></div>
+        </div>
+      </div>
+      <div class="px-8 py-6 grid sm:grid-cols-2 gap-8 border-b border-line">
+        <div>
+          <p class="text-[10px] uppercase tracking-wider text-muted mb-3">Strengths</p>
+          <ul class="space-y-2 text-sm text-muted">
+            <li>· Strong pitch consistency</li>
+            <li>· Clean recording quality</li>
+            <li>· Reliable breath support</li>
+          </ul>
+        </div>
+        <div>
+          <p class="text-[10px] uppercase tracking-wider text-muted mb-3">Focus Areas</p>
+          <ul class="space-y-2 text-sm text-muted">
+            <li>· Upper register control</li>
+            <li>· Dynamic expression</li>
+          </ul>
+        </div>
+      </div>
+      <div class="px-8 py-6 flex items-center justify-between">
+        <div>
+          <p class="text-[10px] uppercase tracking-wider text-muted mb-1">Vocal Risk</p>
+          <p class="font-semibold">Moderate</p>
+        </div>
+        <div class="text-right">
+          <p class="text-[10px] uppercase tracking-wider text-muted mb-1">Reviewed by</p>
+          <p class="text-sm font-medium">Certified Vocal Coach</p>
+        </div>
+      </div>
+      <div class="px-8 py-3 bg-clinical text-white/50 text-[10px] tracking-wider">CheckMix · Human Expert Evaluation · CONFIDENTIAL</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="py-24 px-6 bg-[#FAFAFA] border-y border-line">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-accent mb-4">Process</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">How it works</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 reveal">
+      <div class="card-premium bg-white border border-line rounded-2xl p-7">
+        <p class="text-xs font-bold text-accent mb-4">Step 1</p>
+        <h3 class="font-semibold mb-2">Choose Your Plan</h3>
+        <p class="text-sm text-muted leading-relaxed">Select Vocal Assessment or Assessment + Full Chorus Mix.</p>
+      </div>
+      <div class="card-premium bg-white border border-line rounded-2xl p-7">
+        <p class="text-xs font-bold text-accent mb-4">Step 2</p>
+        <h3 class="font-semibold mb-2">Pay with PayPal</h3>
+        <p class="text-sm text-muted leading-relaxed">Complete your secure PayPal payment. You will be redirected to submit your vocal track automatically.</p>
+      </div>
+      <div class="card-premium bg-white border border-line rounded-2xl p-7">
+        <p class="text-xs font-bold text-accent mb-4">Step 3</p>
+        <h3 class="font-semibold mb-2">Coach Assessment</h3>
+        <p class="text-sm text-muted leading-relaxed">A certified vocal coach evaluates your track using the CheckMix framework.</p>
+      </div>
+      <div class="card-premium bg-white border border-line rounded-2xl p-7">
+        <p class="text-xs font-bold text-accent mb-4">Step 4</p>
+        <h3 class="font-semibold mb-2">Receive Your Report</h3>
+        <p class="text-sm text-muted leading-relaxed">Your full assessment report is delivered within 7–14 business days.</p>
+      </div>
+    </div>
+    <p class="text-center text-sm text-muted mt-10 max-w-xl mx-auto reveal">
+      <strong class="text-ink font-medium">For Assessment + Mix Plan:</strong> Your track is additionally sent for professional mixing and mastering.
+    </p>
+    <p class="text-center text-xs text-muted mt-4 max-w-lg mx-auto reveal">
+      Delivery within 7–14 business days accounts for time zones, coach coordination, and mix engineer scheduling.
+    </p>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16 reveal">
+      <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-accent mb-4">Pricing</p>
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Premium assessment plans</h2>
+      <p class="text-sm text-muted mt-4">Secure payment with PayPal · One chorus submission (approx. 1–2 min) · Delivered within 7–14 business days</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto reveal">
+
+      <!-- $300 -->
+      <div class="card-premium card-accent-border border-2 border-accent rounded-2xl p-8 relative bg-white shadow-[0_16px_48px_rgba(15,118,110,.08)]">
+        <span class="absolute -top-3 left-6 bg-accent text-white text-[11px] font-semibold px-3 py-1 rounded-full">Core Plan</span>
+        <h3 class="text-lg font-semibold mt-2 mb-1">Vocal Assessment</h3>
+        <p class="text-5xl font-bold tracking-tight my-5">$300</p>
+        <p class="text-xs font-semibold uppercase tracking-wider text-muted mb-4">Includes</p>
+        <ul class="space-y-2.5 text-sm text-muted mb-6">
+          <li class="flex gap-2"><span class="text-accent font-bold">✓</span>Detailed vocal assessment</li>
+          <li class="flex gap-2"><span class="text-accent font-bold">✓</span>Comprehensive PDF assessment report</li>
+          <li class="flex gap-2"><span class="text-accent font-bold">✓</span>Practical improvement recommendations</li>
+        </ul>
+        <p class="text-xs text-muted mb-2"><span class="font-semibold text-ink">Submission:</span> One chorus (approx. 1–2 minutes)</p>
+        <p class="text-xs text-muted mb-3"><span class="font-semibold text-ink">Delivery:</span> Within 7–14 business days</p>
+        <p class="text-xs text-muted mb-6" id="assessment-slots">Remaining: Loading...</p>
+        <a href="https://www.paypal.com/ncp/payment/JQN5DDHAYQ33Y" target="_blank" rel="noopener noreferrer" id="assessment-btn" class="btn-premium btn-accent block w-full text-center bg-accent text-white text-sm font-semibold py-3.5 rounded-xl">Buy Now</a>
+      </div>
+
+      <!-- $500 -->
+      <div class="card-premium border border-line rounded-2xl p-8 bg-white relative">
+        <span class="absolute -top-3 left-6 bg-muted text-white text-[11px] font-medium px-3 py-1 rounded-full">Premium Plan</span>
+        <h3 class="text-lg font-semibold mt-2 mb-1">Vocal Assessment + Full Chorus Mix</h3>
+        <p class="text-5xl font-bold tracking-tight my-5">$500</p>
+        <p class="text-xs font-semibold uppercase tracking-wider text-muted mb-4">Includes</p>
+        <ul class="space-y-2.5 text-sm text-muted mb-4">
+          <li class="flex gap-2"><span class="text-accent font-bold">✓</span>Everything included in Vocal Assessment</li>
+          <li class="flex gap-2"><span class="text-accent font-bold">✓</span>Professional full chorus mix</li>
+          <li class="flex gap-2"><span class="text-accent font-bold">✓</span>No revisions included</li>
+        </ul>
+        <p class="text-xs text-muted mb-2"><span class="font-semibold text-ink">Submission:</span> One chorus (approx. 1–2 minutes)</p>
+        <p class="text-xs text-muted mb-3"><span class="font-semibold text-ink">Delivery:</span> Within 7–14 business days</p>
+        <p class="text-xs text-muted mb-6" id="mix-slots">Remaining: Loading...</p>
+        <a href="https://www.paypal.com/ncp/payment/R7GTRG9PE6GE2" target="_blank" rel="noopener noreferrer" id="mix-btn" class="btn-premium btn-dark block w-full text-center bg-ink text-white text-sm font-semibold py-3.5 rounded-xl">Buy Now</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- UPLOAD -->
+<section id="upload" class="py-24 px-6 bg-[#FAFAFA] border-t border-line">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-accent mb-4">Upload</p>
+      <h2 class="text-3xl font-bold tracking-tight">Submit Your Vocal Track</h2>
+      <p class="text-muted mt-4">Upload your audio files for assessment. Supported formats: .wav, .mp3</p>
+    </div>
+
+    <!-- Plan Selection -->
+    <div class="mb-6 reveal">
+      <label class="block text-xs font-medium text-muted mb-2">Select Your Plan</label>
+      <select id="planSelect" class="w-full px-3 py-2.5 text-sm border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors bg-white">
+        <option value="assessment">Vocal Assessment ($300) - One Chorus</option>
+        <option value="mix">Vocal Assessment + Full Mix ($500) - Full Vocal, Harmony, Instrumental</option>
+      </select>
+    </div>
+
+    <!-- Upload Requirements Display -->
+    <div id="uploadRequirements" class="mb-6 p-4 bg-white border border-line rounded-lg reveal">
+      <p class="text-xs font-semibold text-muted mb-2">Required Files:</p>
+      <div id="assessmentRequirements">
+        <p class="text-sm text-muted">• One Chorus (.wav or .mp3)</p>
+      </div>
+      <div id="mixRequirements" class="hidden">
+        <p class="text-sm text-muted">• Full Vocal (.wav or .mp3)</p>
+        <p class="text-sm text-muted">• Harmony (.wav or .mp3)</p>
+        <p class="text-sm text-muted">• Instrumental (.wav or .mp3)</p>
+      </div>
+    </div>
+
+    <!-- Drag & Drop Upload Area -->
+    <div id="uploadArea" class="card-premium border-2 border-dashed border-line rounded-2xl p-8 text-center bg-white cursor-pointer hover:border-accent transition-colors reveal">
+      <div id="uploadPrompt">
+        <svg class="w-12 h-12 mx-auto text-muted mb-4" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"/>
+        </svg>
+        <p class="text-sm font-medium text-muted mb-2">Drag & drop your files here</p>
+        <p class="text-xs text-muted">or click to browse</p>
+        <p class="text-xs text-muted mt-2">Maximum file size: 2GB</p>
+      </div>
+      <input type="file" id="fileInput" multiple accept=".wav,.mp3,audio/wav,audio/mpeg" class="hidden">
+    </div>
+
+    <!-- File List -->
+    <div id="fileList" class="mt-4 space-y-2 hidden"></div>
+
+    <!-- Upload Button -->
+    <button id="uploadBtn" class="btn-premium btn-accent w-full bg-accent text-white text-sm font-semibold py-3.5 rounded-xl mt-6 hidden">
+      Upload Files
+    </button>
+
+    <!-- Upload Status -->
+    <div id="uploadStatus" class="mt-4 hidden"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-24 px-6 bg-[#FAFAFA] border-t border-line">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-12 reveal">
+      <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-accent mb-4">FAQ</p>
+      <h2 class="text-3xl font-bold tracking-tight">Common questions</h2>
+    </div>
+    <div class="space-y-3 reveal" id="faqList">
+      <div class="faq-item bg-white border border-line rounded-xl overflow-hidden">
+        <button type="button" class="faq-btn w-full text-left px-6 py-5 font-semibold text-sm flex justify-between items-center gap-4">
+          Is this an AI singing score service?
+          <svg class="faq-icon w-4 h-4 text-muted shrink-0 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-sm text-muted leading-relaxed">No. Every assessment is reviewed by a certified vocal coach using the CheckMix Vocal Evaluation Framework.</div>
+      </div>
+      <div class="faq-item bg-white border border-line rounded-xl overflow-hidden">
+        <button type="button" class="faq-btn w-full text-left px-6 py-5 font-semibold text-sm flex justify-between items-center gap-4">
+          How long does delivery take?
+          <svg class="faq-icon w-4 h-4 text-muted shrink-0 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-sm text-muted leading-relaxed">All reports are delivered within 7–14 business days. We allow up to 14 business days to account for time zones and coordination between coaches and mix engineers.</div>
+      </div>
+      <div class="faq-item bg-white border border-line rounded-xl overflow-hidden">
+        <button type="button" class="faq-btn w-full text-left px-6 py-5 font-semibold text-sm flex justify-between items-center gap-4">
+          Are mix revisions included?
+          <svg class="faq-icon w-4 h-4 text-muted shrink-0 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-sm text-muted leading-relaxed">No. The Vocal Assessment + Full Chorus Mix plan includes one final mix delivery with no revisions included.</div>
+      </div>
+      <div class="faq-item bg-white border border-line rounded-xl overflow-hidden">
+        <button type="button" class="faq-btn w-full text-left px-6 py-5 font-semibold text-sm flex justify-between items-center gap-4">
+          What files should I submit?
+          <svg class="faq-icon w-4 h-4 text-muted shrink-0 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-sm text-muted leading-relaxed">Submit one chorus of your vocal recording (approximately 1–2 minutes). After PayPal payment, you will be redirected to complete your submission. For best results, instrumental tracks may also be included.</div>
+      </div>
+      <div class="faq-item bg-white border border-line rounded-xl overflow-hidden">
+        <button type="button" class="faq-btn w-full text-left px-6 py-5 font-semibold text-sm flex justify-between items-center gap-4">
+          How do I pay?
+          <svg class="faq-icon w-4 h-4 text-muted shrink-0 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="faq-body hidden px-6 pb-5 text-sm text-muted leading-relaxed">All payments are processed securely through PayPal. Click Buy Now on your chosen plan, complete payment, and you will be automatically redirected to submit your vocal track.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTERPRISE -->
+<section id="enterprise" class="py-20 px-6">
+  <div class="max-w-2xl mx-auto reveal">
+    <div class="card-premium border border-line rounded-2xl p-8 md:p-10 bg-white text-center">
+      <p class="text-[11px] font-semibold tracking-[.14em] uppercase text-accent mb-4">Enterprise</p>
+      <h2 class="text-2xl font-bold tracking-tight mb-4">Enterprise &amp; Partnership Inquiries</h2>
+      <p class="text-sm text-muted leading-relaxed mb-3">We also provide customized vocal assessment solutions for organizations and teams.</p>
+      <p class="text-sm text-muted leading-relaxed mb-8">If you are interested in partnership opportunities, enterprise plans, or custom vocal assessment services, please feel free to contact us.</p>
+      <div class="flex flex-wrap justify-center gap-2 mb-8">
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-[#FAFAFA] border border-line text-muted">VTuber Agencies</span>
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-[#FAFAFA] border border-line text-muted">Talent Management Companies</span>
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-[#FAFAFA] border border-line text-muted">Music Schools</span>
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-[#FAFAFA] border border-line text-muted">Record Labels</span>
+        <span class="text-xs font-medium px-3 py-1.5 rounded-full bg-[#FAFAFA] border border-line text-muted">Creator Platforms</span>
+      </div>
+      <p class="text-[10px] uppercase tracking-wider text-muted mb-4">Contact</p>
+      <form id="contactForm" action="https://formspree.io/f/mzdneknv" method="POST" class="text-left space-y-4">
+        <div>
+          <label for="name" class="block text-xs font-medium text-muted mb-1.5">Name</label>
+          <input type="text" id="name" name="name" required class="w-full px-3 py-2.5 text-sm border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors">
+        </div>
+        <div>
+          <label for="email" class="block text-xs font-medium text-muted mb-1.5">Email</label>
+          <input type="email" id="email" name="email" required class="w-full px-3 py-2.5 text-sm border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors">
+        </div>
+        <div>
+          <label for="subject" class="block text-xs font-medium text-muted mb-1.5">Subject</label>
+          <input type="text" id="subject" name="subject" required class="w-full px-3 py-2.5 text-sm border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors">
+        </div>
+        <div>
+          <label for="message" class="block text-xs font-medium text-muted mb-1.5">Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full px-3 py-2.5 text-sm border border-line rounded-lg focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent transition-colors resize-none"></textarea>
+        </div>
+        <button type="submit" id="submitBtn" class="btn-premium btn-accent w-full bg-accent text-white text-sm font-semibold py-3 rounded-xl">
+          Send Message
+        </button>
+      </form>
+      <div id="formMessage" class="hidden mt-4 text-sm"></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-20 px-6">
+  <div class="max-w-3xl mx-auto text-center bg-clinical text-white rounded-2xl px-8 py-16 reveal">
+    <h2 class="text-2xl md:text-3xl font-bold tracking-tight mb-4">Ready for your assessment?</h2>
+    <p class="text-white/60 text-sm mb-8 max-w-md mx-auto">Know your level. Understand your strengths. Improve with purpose. Protect your voice.</p>
+    <a href="https://www.paypal.com/ncp/payment/JQN5DDHAYQ33Y" target="_blank" rel="noopener noreferrer" class="btn-premium btn-light inline-flex bg-white text-ink text-sm font-semibold px-6 py-3.5 rounded-xl">Buy Now — $300</a>
+    <p class="text-white/40 text-xs mt-4">Secure payment with PayPal</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="border-t border-line py-10 px-6 text-center text-xs text-muted">
+  <p>© 2026 CheckMix · Professional Vocal Assessment</p>
+  <p class="mt-2 text-[11px]">Secure payment with PayPal</p>
+  <p class="mt-3"><a href="tokusyohou.html" class="hover:text-ink transition-colors">Legal notice (Japan)</a></p>
+</footer>
+
+<script>
+const LABEL_SCORE = { 'Exceptional': 100, 'Excellent': 80, 'Strong': 60, 'Moderate': 40, 'Needs Work': 20 };
+const SAMPLE = { Pitch: 'Excellent', Timing: 'Strong', Expression: 'Strong', 'Recording Environment': 'Excellent', 'Vocal Production': 'Strong' };
+
+function buildRadar(canvasId) {
+  const canvas = document.getElementById(canvasId);
+  if (!canvas || typeof Chart === 'undefined') return;
+  const labels = Object.keys(SAMPLE);
+  const data = labels.map(l => LABEL_SCORE[SAMPLE[l]]);
+  new Chart(canvas, {
+    type: 'radar',
+    data: {
+      labels,
+      datasets: [{
+        data,
+        backgroundColor: 'rgba(15,118,110,0.12)',
+        borderColor: '#0F766E',
+        borderWidth: 2,
+        pointRadius: 3,
+        pointBackgroundColor: '#0F766E',
+      }]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label(ctx) {
+              return SAMPLE[ctx.label] || '';
+            }
+          }
+        }
+      },
+      scales: {
+        r: {
+          beginAtZero: true,
+          max: 100,
+          ticks: { display: false, stepSize: 20 },
+          grid: { color: 'rgba(0,0,0,0.06)' },
+          angleLines: { color: 'rgba(0,0,0,0.06)' },
+          pointLabels: {
+            font: { size: 10, family: 'Inter' },
+            color: '#71717A',
+          }
+        }
+      }
+    }
+  });
+}
+
+window.addEventListener('load', () => {
+  buildRadar('heroRadar');
+  buildRadar('frameworkRadar');
+});
+
+document.querySelectorAll('.faq-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const item = btn.closest('.faq-item');
+    const body = item.querySelector('.faq-body');
+    const icon = item.querySelector('.faq-icon');
+    const open = !body.classList.contains('hidden');
+    document.querySelectorAll('.faq-body').forEach(b => b.classList.add('hidden'));
+    document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = '');
+    if (!open) {
+      body.classList.remove('hidden');
+      icon.style.transform = 'rotate(180deg)';
+    }
+  });
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Formspree form handling
+const contactForm = document.getElementById('contactForm');
+const submitBtn = document.getElementById('submitBtn');
+const formMessage = document.getElementById('formMessage');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending...';
+    formMessage.classList.add('hidden');
+    
+    const formData = new FormData(contactForm);
+    
+    try {
+      const response = await fetch(contactForm.action, {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+      
+      if (response.ok) {
+        formMessage.innerHTML = '<p class="font-semibold text-accent">Thank you!</p><p class="text-muted mt-1">Your message has been sent successfully.</p><p class="text-muted">We\'ll get back to you within 24–48 hours.</p>';
+        formMessage.classList.remove('hidden');
+        contactForm.reset();
+      } else {
+        const data = await response.json();
+        formMessage.innerHTML = '<p class="font-semibold text-red-600">Error</p><p class="text-muted mt-1">' + (data.error || 'There was a problem sending your message. Please try again.') + '</p>';
+        formMessage.classList.remove('hidden');
+      }
+    } catch (error) {
+      formMessage.innerHTML = '<p class="font-semibold text-red-600">Error</p><p class="text-muted mt-1">There was a problem sending your message. Please try again.</p>';
+      formMessage.classList.remove('hidden');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send Message';
+    }
+  });
+}
+
+// Slot management - fetch and display available slots
+async function fetchSlots() {
+  try {
+    const response = await fetch('/.netlify/functions/slots');
+    const data = await response.json();
+    
+    // Update assessment slots display
+    const assessmentSlotsEl = document.getElementById('assessment-slots');
+    const assessmentBtn = document.getElementById('assessment-btn');
+    if (assessmentSlotsEl && data.assessment) {
+      assessmentSlotsEl.textContent = `Remaining: ${data.assessment.remaining} / ${data.assessment.max}`;
+      
+      // Disable button if no slots available
+      if (data.assessment.remaining === 0) {
+        assessmentBtn.classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+        assessmentBtn.textContent = 'Sold Out';
+      }
+    }
+    
+    // Update mix slots display
+    const mixSlotsEl = document.getElementById('mix-slots');
+    const mixBtn = document.getElementById('mix-btn');
+    if (mixSlotsEl && data.mix) {
+      mixSlotsEl.textContent = `Remaining: ${data.mix.remaining} / ${data.mix.max}`;
+      
+      // Disable button if no slots available
+      if (data.mix.remaining === 0) {
+        mixBtn.classList.add('opacity-50', 'cursor-not-allowed', 'pointer-events-none');
+        mixBtn.textContent = 'Sold Out';
+      }
+    }
+  } catch (error) {
+    console.error('Failed to fetch slots:', error);
+    // Fallback display if API is unavailable
+    document.getElementById('assessment-slots').textContent = 'Remaining: 2 / 2';
+    document.getElementById('mix-slots').textContent = 'Remaining: 2 / 2';
+  }
+}
+
+// Fetch slots on page load
+window.addEventListener('load', () => {
+  buildRadar('heroRadar');
+  buildRadar('frameworkRadar');
+  fetchSlots();
+});
+
+// Refresh slots every 30 seconds
+setInterval(fetchSlots, 30000);
+
+// Upload functionality
+const planSelect = document.getElementById('planSelect');
+const uploadArea = document.getElementById('uploadArea');
+const fileInput = document.getElementById('fileInput');
+const fileList = document.getElementById('fileList');
+const uploadBtn = document.getElementById('uploadBtn');
+const uploadStatus = document.getElementById('uploadStatus');
+const assessmentRequirements = document.getElementById('assessmentRequirements');
+const mixRequirements = document.getElementById('mixRequirements');
+
+let selectedFiles = [];
+
+// Plan selection change handler
+planSelect.addEventListener('change', () => {
+  const plan = planSelect.value;
+  if (plan === 'assessment') {
+    assessmentRequirements.classList.remove('hidden');
+    mixRequirements.classList.add('hidden');
+  } else {
+    assessmentRequirements.classList.add('hidden');
+    mixRequirements.classList.remove('hidden');
+  }
+  validateFiles();
+});
+
+// Drag & drop handlers
+uploadArea.addEventListener('click', () => fileInput.click());
+
+uploadArea.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  uploadArea.classList.add('border-accent', 'bg-teal-50');
+});
+
+uploadArea.addEventListener('dragleave', () => {
+  uploadArea.classList.remove('border-accent', 'bg-teal-50');
+});
+
+uploadArea.addEventListener('drop', (e) => {
+  e.preventDefault();
+  uploadArea.classList.remove('border-accent', 'bg-teal-50');
+  handleFiles(e.dataTransfer.files);
+});
+
+fileInput.addEventListener('change', () => {
+  handleFiles(fileInput.files);
+});
+
+function handleFiles(files) {
+  const plan = planSelect.value;
+  const allowedTypes = ['audio/wav', 'audio/mpeg', 'audio/x-wav', 'audio/mp3'];
+  const maxSize = 2 * 1024 * 1024 * 1024; // 2GB
+
+  for (let file of files) {
+    // Validate file type
+    if (!allowedTypes.includes(file.type)) {
+      showUploadStatus('error', `Invalid file type: ${file.name}. Only .wav and .mp3 files are allowed.`);
+      continue;
+    }
+
+    // Validate file size
+    if (file.size > maxSize) {
+      showUploadStatus('error', `File too large: ${file.name}. Maximum size is 2GB.`);
+      continue;
+    }
+
+    // Check for duplicates
+    if (!selectedFiles.find(f => f.name === file.name)) {
+      selectedFiles.push(file);
+    }
+  }
+
+  updateFileList();
+  validateFiles();
+}
+
+function updateFileList() {
+  fileList.innerHTML = '';
+  
+  if (selectedFiles.length === 0) {
+    fileList.classList.add('hidden');
+    uploadBtn.classList.add('hidden');
+    return;
+  }
+
+  fileList.classList.remove('hidden');
+  
+  selectedFiles.forEach((file, index) => {
+    const fileItem = document.createElement('div');
+    fileItem.className = 'flex items-center justify-between p-3 bg-white border border-line rounded-lg';
+    fileItem.innerHTML = `
+      <div class="flex items-center gap-3">
+        <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"/>
+        </svg>
+        <div>
+          <p class="text-sm font-medium text-ink">${file.name}</p>
+          <p class="text-xs text-muted">${(file.size / (1024 * 1024)).toFixed(2)} MB</p>
+        </div>
+      </div>
+      <button type="button" class="text-muted hover:text-red-600 transition-colors" onclick="removeFile(${index})">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path d="M6 18L18 6M6 6l12 12"/>
+        </svg>
+      </button>
+    `;
+    fileList.appendChild(fileItem);
+  });
+
+  validateFiles();
+}
+
+function removeFile(index) {
+  selectedFiles.splice(index, 1);
+  updateFileList();
+  validateFiles();
+}
+
+function validateFiles() {
+  const plan = planSelect.value;
+  let isValid = false;
+
+  if (plan === 'assessment') {
+    // $300 plan: requires exactly 1 file
+    isValid = selectedFiles.length === 1;
+  } else {
+    // $500 plan: requires exactly 3 files
+    isValid = selectedFiles.length === 3;
+  }
+
+  // Show button if files are selected (allow upload even if not exactly required count)
+  if (selectedFiles.length > 0) {
+    uploadBtn.classList.remove('hidden');
+  } else {
+    uploadBtn.classList.add('hidden');
+  }
+}
+
+function showUploadStatus(type, message) {
+  uploadStatus.classList.remove('hidden');
+  if (type === 'error') {
+    uploadStatus.innerHTML = `<p class="text-sm text-red-600">${message}</p>`;
+  } else if (type === 'success') {
+    uploadStatus.innerHTML = `<p class="text-sm font-semibold text-accent">${message}</p>`;
+  } else if (type === 'loading') {
+    uploadStatus.innerHTML = `<p class="text-sm text-muted">${message}</p>`;
+  }
+}
+
+// Upload button handler - UploadThing v7 REST API
+uploadBtn.addEventListener('click', async () => {
+  const plan = planSelect.value;
+  
+  if (selectedFiles.length === 0) {
+    showUploadStatus('error', 'Please select files to upload.');
+    return;
+  }
+
+  uploadBtn.disabled = true;
+  uploadBtn.textContent = 'Uploading...';
+  showUploadStatus('loading', 'Uploading...');
+
+  try {
+    // Prepare file data for UploadThing API
+    const filesData = selectedFiles.map(file => ({
+      name: file.name,
+      size: file.size,
+      type: file.type,
+    }));
+
+    // Call Netlify Function to get presigned URLs from UploadThing
+    const prepareResponse = await fetch('/.netlify/functions/uploadthing', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        files: filesData,
+        callbackUrl: window.location.origin + '/.netlify/functions/uploadthing-callback',
+      }),
+    });
+
+    if (!prepareResponse.ok) {
+      const errorData = await prepareResponse.json();
+      throw new Error(errorData.error || 'Failed to prepare upload');
+    }
+
+    const prepareData = await prepareResponse.json();
+
+    // Upload each file using the presigned URL
+    if (prepareData.data && prepareData.data.length > 0) {
+      for (let i = 0; i < prepareData.data.length; i++) {
+        const uploadData = prepareData.data[i];
+        const file = selectedFiles[i];
+
+        // Upload file to UploadThing using the presigned URL
+        const uploadResponse = await fetch(uploadData.presignedUrl, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': file.type,
+          },
+          body: file,
+        });
+
+        if (!uploadResponse.ok) {
+          throw new Error(`Failed to upload ${file.name}`);
+        }
+      }
+    }
+
+    // Success
+    showUploadStatus('success', 'Upload Complete');
+    selectedFiles = [];
+    updateFileList();
+    uploadBtn.classList.add('hidden');
+
+  } catch (error) {
+    showUploadStatus('error', 'Upload Failed');
+    console.error('Upload error:', error);
+  } finally {
+    uploadBtn.disabled = false;
+    uploadBtn.textContent = 'Upload Files';
+  }
+});
+
+// Hamburger Menu Functionality
+const menuToggle = document.getElementById('menu-toggle');
+const menuOverlay = document.getElementById('menu-overlay');
+const menuPanel = document.getElementById('menu-panel');
+const menuBackdrop = document.getElementById('menu-backdrop');
+const menuClose = document.getElementById('menu-close');
+const menuLinks = document.querySelectorAll('.menu-link');
+
+function openMenu() {
+  menuOverlay.classList.remove('hidden');
+  menuOverlay.setAttribute('aria-hidden', 'false');
+  menuToggle.setAttribute('aria-expanded', 'true');
+  menuToggle.setAttribute('aria-label', 'Close menu');
+  setTimeout(() => {
+    menuPanel.classList.remove('translate-x-full');
+  }, 10);
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMenu() {
+  menuPanel.classList.add('translate-x-full');
+  setTimeout(() => {
+    menuOverlay.classList.add('hidden');
+    menuOverlay.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Open menu');
+  }, 300);
+  document.body.style.overflow = '';
+}
+
+menuToggle.addEventListener('click', () => {
+  const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
+  if (isOpen) {
+    closeMenu();
+  } else {
+    openMenu();
+  }
+});
+
+menuClose.addEventListener('click', closeMenu);
+
+menuBackdrop.addEventListener('click', closeMenu);
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !menuOverlay.classList.contains('hidden')) {
+    closeMenu();
+  }
+});
+
+menuLinks.forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (href && href.startsWith('#')) {
+      closeMenu();
+    }
+  });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)https://pro-desk.netlify.app/ -->
+<html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+<!-- This site is hosted on Netlify. Anyone can build and deploy a site
+     like this one for free: https://netlify.new/?utm_campaign=loops&utm_source=ai-legible&utm_medium=owned&utm_content=comment&utm_id=d02e0e40-e15d-470b-81f7-8f6c34504550
+     Netlify hosting facts for this site: static/SSR served via Netlify Edge. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StudioOps</title>
+  <script src="./StudioOps_files/saved_resource"></script>
+  <script src="./StudioOps_files/lucide.min.js.ダウンロード"></script>
+  <link href="./StudioOps_files/css2" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .view { display: none; }
+    .view.active { display: flex; }
+    .nav-btn.active {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 500;
+    }
+    .scrollbar-thin::-webkit-scrollbar { width: 6px; }
+    .scrollbar-thin::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.bottom-0{bottom:0px}.left-0{left:0px}.right-0{right:0px}.z-50{z-index:50}.mx-auto{margin-left:auto;margin-right:auto}.mb-6{margin-bottom:1.5rem}.ml-1{margin-left:0.25rem}.mt-1{margin-top:0.25rem}.mt-3{margin-top:0.75rem}.mt-0\.5{margin-top:0.125rem}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.h-0\.5{height:0.125rem}.h-1\.5{height:0.375rem}.h-10{height:2.5rem}.h-11{height:2.75rem}.h-14{height:3.5rem}.h-4{height:1rem}.h-5{height:1.25rem}.h-8{height:2rem}.h-full{height:100%}.h-screen{height:100vh}.h-6{height:1.5rem}.w-1\.5{width:0.375rem}.w-10{width:2.5rem}.w-11{width:2.75rem}.w-4{width:1rem}.w-5{width:1.25rem}.w-56{width:14rem}.w-8{width:2rem}.w-full{width:100%}.w-6{width:1.5rem}.min-w-0{min-width:0px}.max-w-md{max-width:28rem}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.grid-cols-1{grid-template-columns:repeat(1, minmax(0, 1fr))}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.items-start{align-items:flex-start}.items-end{align-items:flex-end}.items-center{align-items:center}.justify-end{justify-content:flex-end}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-2{gap:0.5rem}.gap-2\.5{gap:0.625rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.space-y-1 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.25rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.25rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.space-y-4 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(1rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(1rem * var(--tw-space-y-reverse))}.overflow-hidden{overflow:hidden}.overflow-y-auto{overflow-y:auto}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.rounded-full{border-radius:9999px}.rounded-lg{border-radius:0.5rem}.rounded-xl{border-radius:0.75rem}.border{border-width:1px}.border-b{border-bottom-width:1px}.border-r{border-right-width:1px}.border-t{border-top-width:1px}.border-slate-100{--tw-border-opacity:1;border-color:rgb(241 245 249 / var(--tw-border-opacity, 1))}.border-slate-200{--tw-border-opacity:1;border-color:rgb(226 232 240 / var(--tw-border-opacity, 1))}.bg-slate-50{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.bg-amber-100{--tw-bg-opacity:1;background-color:rgb(254 243 199 / var(--tw-bg-opacity, 1))}.bg-amber-50{--tw-bg-opacity:1;background-color:rgb(255 251 235 / var(--tw-bg-opacity, 1))}.bg-blue-100{--tw-bg-opacity:1;background-color:rgb(219 234 254 / var(--tw-bg-opacity, 1))}.bg-blue-50{--tw-bg-opacity:1;background-color:rgb(239 246 255 / var(--tw-bg-opacity, 1))}.bg-emerald-50{--tw-bg-opacity:1;background-color:rgb(236 253 245 / var(--tw-bg-opacity, 1))}.bg-emerald-500{--tw-bg-opacity:1;background-color:rgb(16 185 129 / var(--tw-bg-opacity, 1))}.bg-slate-200{--tw-bg-opacity:1;background-color:rgb(226 232 240 / var(--tw-bg-opacity, 1))}.bg-slate-900{--tw-bg-opacity:1;background-color:rgb(15 23 42 / var(--tw-bg-opacity, 1))}.bg-slate-900\/40{background-color:rgb(15 23 42 / 0.4)}.bg-violet-100{--tw-bg-opacity:1;background-color:rgb(237 233 254 / var(--tw-bg-opacity, 1))}.bg-violet-50{--tw-bg-opacity:1;background-color:rgb(245 243 255 / var(--tw-bg-opacity, 1))}.bg-white{--tw-bg-opacity:1;background-color:rgb(255 255 255 / var(--tw-bg-opacity, 1))}.bg-amber-500{--tw-bg-opacity:1;background-color:rgb(245 158 11 / var(--tw-bg-opacity, 1))}.bg-blue-500{--tw-bg-opacity:1;background-color:rgb(59 130 246 / var(--tw-bg-opacity, 1))}.bg-slate-400{--tw-bg-opacity:1;background-color:rgb(148 163 184 / var(--tw-bg-opacity, 1))}.bg-violet-500{--tw-bg-opacity:1;background-color:rgb(139 92 246 / var(--tw-bg-opacity, 1))}.bg-opacity-15{--tw-bg-opacity:0.15}.p-3{padding:0.75rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-8{padding:2rem}.px-2{padding-left:0.5rem;padding-right:0.5rem}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-3\.5{padding-left:0.875rem;padding-right:0.875rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-2\.5{padding-top:0.625rem;padding-bottom:0.625rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.py-4{padding-top:1rem;padding-bottom:1rem}.py-3\.5{padding-top:0.875rem;padding-bottom:0.875rem}.pb-2\.5{padding-bottom:0.625rem}.pt-3{padding-top:0.75rem}.text-left{text-align:left}.text-center{text-align:center}.text-2xl{font-size:1.5rem;line-height:2rem}.text-base{font-size:1rem;line-height:1.5rem}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xs{font-size:0.75rem;line-height:1rem}.text-\[10px\]{font-size:10px}.text-\[11px\]{font-size:11px}.font-medium{font-weight:500}.font-semibold{font-weight:600}.tracking-tight{letter-spacing:-0.025em}.text-slate-900{--tw-text-opacity:1;color:rgb(15 23 42 / var(--tw-text-opacity, 1))}.text-amber-700{--tw-text-opacity:1;color:rgb(180 83 9 / var(--tw-text-opacity, 1))}.text-blue-600{--tw-text-opacity:1;color:rgb(37 99 235 / var(--tw-text-opacity, 1))}.text-blue-700{--tw-text-opacity:1;color:rgb(29 78 216 / var(--tw-text-opacity, 1))}.text-emerald-600{--tw-text-opacity:1;color:rgb(5 150 105 / var(--tw-text-opacity, 1))}.text-emerald-700{--tw-text-opacity:1;color:rgb(4 120 87 / var(--tw-text-opacity, 1))}.text-rose-600{--tw-text-opacity:1;color:rgb(225 29 72 / var(--tw-text-opacity, 1))}.text-slate-400{--tw-text-opacity:1;color:rgb(148 163 184 / var(--tw-text-opacity, 1))}.text-slate-500{--tw-text-opacity:1;color:rgb(100 116 139 / var(--tw-text-opacity, 1))}.text-slate-600{--tw-text-opacity:1;color:rgb(71 85 105 / var(--tw-text-opacity, 1))}.text-violet-700{--tw-text-opacity:1;color:rgb(109 40 217 / var(--tw-text-opacity, 1))}.text-white{--tw-text-opacity:1;color:rgb(255 255 255 / var(--tw-text-opacity, 1))}.text-slate-700{--tw-text-opacity:1;color:rgb(51 65 85 / var(--tw-text-opacity, 1))}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-40{opacity:0.4}.opacity-70{opacity:0.7}.shadow-xl{--tw-shadow:0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);--tw-shadow-colored:0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.ring-1{--tw-ring-offset-shadow:var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);--tw-ring-shadow:var(--tw-ring-inset) 0 0 0 calc(1px + var(--tw-ring-offset-width)) var(--tw-ring-color);box-shadow:var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000)}.ring-inset{--tw-ring-inset:inset}.ring-emerald-600\/20{--tw-ring-color:rgb(5 150 105 / 0.2)}.ring-amber-600\/20{--tw-ring-color:rgb(217 119 6 / 0.2)}.ring-blue-600\/20{--tw-ring-color:rgb(37 99 235 / 0.2)}.ring-violet-600\/20{--tw-ring-color:rgb(124 58 237 / 0.2)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.hover\:bg-slate-50:hover{--tw-bg-opacity:1;background-color:rgb(248 250 252 / var(--tw-bg-opacity, 1))}.hover\:bg-slate-800:hover{--tw-bg-opacity:1;background-color:rgb(30 41 59 / var(--tw-bg-opacity, 1))}.hover\:text-slate-800:hover{--tw-text-opacity:1;color:rgb(30 41 59 / var(--tw-text-opacity, 1))}.hover\:shadow-sm:hover{--tw-shadow:0 1px 2px 0 rgb(0 0 0 / 0.05);--tw-shadow-colored:0 1px 2px 0 var(--tw-shadow-color);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}@media (min-width: 768px){.md\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.md\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}@media (min-width: 1024px){.lg\:flex{display:flex}.lg\:w-\[420px\]{width:420px}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}}</style></head>
+<body class="bg-slate-50 text-slate-900 antialiased">
+
+  <div class="flex h-screen overflow-hidden">
+
+    <!-- ========== サイドバー ========== -->
+    <aside class="flex w-56 flex-col border-r border-slate-200 bg-white">
+      <div class="flex h-14 items-center gap-2.5 border-b border-slate-100 px-5">
+        <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-slate-900">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layers" aria-hidden="true" class="lucide lucide-layers h-4 w-4 text-white"><path d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"></path><path d="M2 12a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 12"></path><path d="M2 17a1 1 0 0 0 .58.91l8.6 3.91a2 2 0 0 0 1.65 0l8.58-3.9A1 1 0 0 0 22 17"></path></svg>
+        </div>
+        <span class="text-base font-semibold tracking-tight">StudioOps</span>
+      </div>
+
+      <nav class="flex-1 px-3 py-4 space-y-1">
+        <button onclick="switchView('requests')" class="nav-btn active flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50 transition" data-view="requests">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="layout-dashboard" aria-hidden="true" class="lucide lucide-layout-dashboard h-4 w-4 shrink-0"><rect width="7" height="9" x="3" y="3" rx="1"></rect><rect width="7" height="5" x="14" y="3" rx="1"></rect><rect width="7" height="9" x="14" y="12" rx="1"></rect><rect width="7" height="5" x="3" y="16" rx="1"></rect></svg>
+          <span>依頼一覧</span>
+        </button>
+        <button onclick="switchView('board')" class="nav-btn flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50 transition" data-view="board">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="columns-3" aria-hidden="true" class="lucide lucide-columns-3 h-4 w-4 shrink-0"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M9 3v18"></path><path d="M15 3v18"></path></svg>
+          <span>ボード</span>
+        </button>
+        <button onclick="switchView('calendar')" class="nav-btn flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50 transition" data-view="calendar">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="calendar" aria-hidden="true" class="lucide lucide-calendar h-4 w-4 shrink-0"><path d="M8 2v3"></path><path d="M16 2v3"></path><rect x="3" y="3" width="18" height="18" rx="2"></rect><path d="M3 9h18"></path></svg>
+          <span>カレンダー</span>
+        </button>
+        <button onclick="switchView('team')" class="nav-btn flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50 transition" data-view="team">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="users" aria-hidden="true" class="lucide lucide-users h-4 w-4 shrink-0"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><path d="M16 3.128a4 4 0 0 1 0 7.744"></path><path d="M22 21v-2a4 4 0 0 0-3-3.87"></path><circle cx="9" cy="7" r="4"></circle></svg>
+          <span>チーム</span>
+        </button>
+        <button onclick="switchView('analytics')" class="nav-btn flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50 transition" data-view="analytics">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="bar-chart-3" aria-hidden="true" class="lucide lucide-bar-chart-3 h-4 w-4 shrink-0"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
+          <span>分析</span>
+        </button>
+      </nav>
+
+      <div class="border-t border-slate-100 px-3 py-3">
+        <button onclick="switchView('settings')" class="nav-btn flex w-full items-center gap-3 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:bg-slate-50 transition" data-view="settings">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="settings" aria-hidden="true" class="lucide lucide-settings h-4 w-4 shrink-0"><path d="M9.671 4.136a2.34 2.34 0 0 1 4.659 0 2.34 2.34 0 0 0 3.319 1.915 2.34 2.34 0 0 1 2.33 4.033 2.34 2.34 0 0 0 0 3.831 2.34 2.34 0 0 1-2.33 4.033 2.34 2.34 0 0 0-3.319 1.915 2.34 2.34 0 0 1-4.659 0 2.34 2.34 0 0 0-3.32-1.915 2.34 2.34 0 0 1-2.33-4.033 2.34 2.34 0 0 0 0-3.831A2.34 2.34 0 0 1 6.35 6.051a2.34 2.34 0 0 0 3.319-1.915"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          <span>設定</span>
+        </button>
+        <div class="mt-3 flex items-center gap-3 px-3 py-2">
+          <div class="flex h-8 w-8 items-center justify-center rounded-full bg-slate-200 text-xs font-semibold">AK</div>
+          <div class="min-w-0">
+            <p class="truncate text-sm font-medium">Alex Kim</p>
+            <p class="truncate text-xs text-slate-500">Studio Lead</p>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- ========== メイン ========== -->
+    <div class="flex flex-1 flex-col overflow-hidden">
+
+      <!-- ヘッダー -->
+      <header class="flex h-14 items-center justify-between border-b border-slate-200 bg-white px-6">
+        <div class="flex items-center gap-3">
+          <h1 id="page-title" class="text-sm font-semibold">制作依頼</h1>
+          <span id="active-badge" class="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-2.5 py-0.5 text-xs font-medium text-emerald-700 ring-1 ring-inset ring-emerald-600/20">
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+            3件 アクティブ
+          </span>
+        </div>
+        <button onclick="openModal()" class="inline-flex items-center gap-1.5 rounded-lg bg-slate-900 px-3.5 py-1.5 text-sm font-medium text-white hover:bg-slate-800">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="plus" aria-hidden="true" class="lucide lucide-plus h-4 w-4"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+          新規依頼
+        </button>
+      </header>
+
+      <!-- コンテンツ -->
+      <main class="relative flex-1 overflow-hidden">
+
+        <!-- ===== 依頼一覧（詳細版） ===== -->
+        <div id="view-requests" class="view active h-full">
+          <div class="flex h-full">
+            <!-- 左：リスト -->
+            <div class="flex w-full flex-col border-r border-slate-200 bg-white lg:w-[420px]">
+              <!-- タブ -->
+              <div class="flex gap-1 border-b border-slate-100 px-4 pt-3">
+                <button class="tab-btn relative px-3 pb-2.5 text-sm font-medium text-slate-900" data-filter="all">
+                  すべて <span class="ml-1 text-slate-400">6</span>
+                  <span class="absolute bottom-0 left-0 right-0 h-0.5 bg-slate-900 rounded-full"></span>
+                </button>
+                <button class="tab-btn relative px-3 pb-2.5 text-sm font-medium text-slate-500 hover:text-slate-800" data-filter="progress">
+                  進行中 <span class="ml-1 text-slate-400">2</span>
+                </button>
+                <button class="tab-btn relative px-3 pb-2.5 text-sm font-medium text-slate-500 hover:text-slate-800" data-filter="review">
+                  レビュー <span class="ml-1 text-slate-400">1</span>
+                </button>
+                <button class="tab-btn relative px-3 pb-2.5 text-sm font-medium text-slate-500 hover:text-slate-800" data-filter="done">
+                  完了 <span class="ml-1 text-slate-400">1</span>
+                </button>
+              </div>
+              <!-- リスト -->
+              <div id="request-list" class="flex-1 overflow-y-auto scrollbar-thin">
+        <button onclick="selectRequest(1)" class="w-full border-b border-slate-100 px-4 py-3.5 text-left transition hover:bg-slate-50 ">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0 flex-1">
+              <p class="text-xs text-slate-500">株式会社アトラス</p>
+              <p class="mt-0.5 truncate text-sm font-medium text-slate-900">コーポレートサイト リニューアル</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5 shrink-0">
+              <span class="text-xs text-slate-500">
+                10/15
+              </span>
+              <div class="flex items-center gap-2">
+                <div class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500 bg-opacity-15 text-[10px] font-semibold text-slate-700">山</div>
+                <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset bg-blue-50 text-blue-700 ring-blue-600/20">
+                  <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                  進行中
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+      
+        <button onclick="selectRequest(2)" class="w-full border-b border-slate-100 px-4 py-3.5 text-left transition hover:bg-slate-50 ">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0 flex-1">
+              <p class="text-xs text-slate-500">ブルーオーシャン商事</p>
+              <p class="mt-0.5 truncate text-sm font-medium text-slate-900">商品カタログ制作</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5 shrink-0">
+              <span class="text-xs text-slate-500">
+                9/25
+              </span>
+              <div class="flex items-center gap-2">
+                <div class="flex h-6 w-6 items-center justify-center rounded-full bg-violet-500 bg-opacity-15 text-[10px] font-semibold text-slate-700">佐</div>
+                <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset bg-violet-50 text-violet-700 ring-violet-600/20">
+                  <span class="h-1.5 w-1.5 rounded-full bg-violet-500"></span>
+                  レビュー
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+      
+        <button onclick="selectRequest(3)" class="w-full border-b border-slate-100 px-4 py-3.5 text-left transition hover:bg-slate-50 ">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0 flex-1">
+              <p class="text-xs text-slate-500">テクノロジー研究所</p>
+              <p class="mt-0.5 truncate text-sm font-medium text-slate-900">展示用ブースデザイン</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5 shrink-0">
+              <span class="text-xs text-slate-500">
+                12/1
+              </span>
+              <div class="flex items-center gap-2">
+                <div class="flex h-6 w-6 items-center justify-center rounded-full bg-amber-500 bg-opacity-15 text-[10px] font-semibold text-slate-700">鈴</div>
+                <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset bg-amber-50 text-amber-700 ring-amber-600/20">
+                  <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                  未着手
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+      
+        <button onclick="selectRequest(4)" class="w-full border-b border-slate-100 px-4 py-3.5 text-left transition hover:bg-slate-50 ">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0 flex-1">
+              <p class="text-xs text-slate-500">グリーンフィールド農園</p>
+              <p class="mt-0.5 truncate text-sm font-medium text-slate-900">ロゴ・VI制作</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5 shrink-0">
+              <span class="text-xs text-rose-600 font-medium">
+                8/30 (19日超過)
+              </span>
+              <div class="flex items-center gap-2">
+                <div class="flex h-6 w-6 items-center justify-center rounded-full bg-emerald-500 bg-opacity-15 text-[10px] font-semibold text-slate-700">山</div>
+                <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset bg-emerald-50 text-emerald-700 ring-emerald-600/20">
+                  <span class="h-1.5 w-1.5 rounded-full bg-emerald-500"></span>
+                  完了
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+      
+        <button onclick="selectRequest(5)" class="w-full border-b border-slate-100 px-4 py-3.5 text-left transition hover:bg-slate-50 ">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0 flex-1">
+              <p class="text-xs text-slate-500">株式会社アトラス</p>
+              <p class="mt-0.5 truncate text-sm font-medium text-slate-900">採用LP制作</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5 shrink-0">
+              <span class="text-xs text-slate-500">
+                9/22
+              </span>
+              <div class="flex items-center gap-2">
+                <div class="flex h-6 w-6 items-center justify-center rounded-full bg-blue-500 bg-opacity-15 text-[10px] font-semibold text-slate-700">佐</div>
+                <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset bg-blue-50 text-blue-700 ring-blue-600/20">
+                  <span class="h-1.5 w-1.5 rounded-full bg-blue-500"></span>
+                  進行中
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+      
+        <button onclick="selectRequest(6)" class="w-full border-b border-slate-100 px-4 py-3.5 text-left transition hover:bg-slate-50 ">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0 flex-1">
+              <p class="text-xs text-slate-500">シティカフェ</p>
+              <p class="mt-0.5 truncate text-sm font-medium text-slate-900">メニューブック redesign</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5 shrink-0">
+              <span class="text-xs text-slate-500">
+                11/10
+              </span>
+              <div class="flex items-center gap-2">
+                <div class="flex h-6 w-6 items-center justify-center rounded-full bg-slate-400 bg-opacity-15 text-[10px] font-semibold text-slate-700">?</div>
+                <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset bg-amber-50 text-amber-700 ring-amber-600/20">
+                  <span class="h-1.5 w-1.5 rounded-full bg-amber-500"></span>
+                  未着手
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+      </div>
+            </div>
+
+            <!-- 右：詳細パネル -->
+            <div id="detail-panel" class="hidden flex-1 flex-col bg-slate-50 lg:flex">
+              <div class="flex flex-1 items-center justify-center text-slate-400">
+                <div class="text-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="inbox" aria-hidden="true" class="lucide lucide-inbox mx-auto h-10 w-10 opacity-40"><polyline points="22 12 16 12 14 15 10 15 8 12 2 12"></polyline><path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11z"></path></svg>
+                  <p class="mt-3 text-sm">依頼を選択すると詳細が表示されます</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== ボード ===== -->
+        <div id="view-board" class="view h-full flex-col p-6 overflow-y-auto bg-slate-50">
+          <div class="mb-6">
+            <h2 class="text-lg font-semibold">カンバンボード</h2>
+            <p class="text-sm text-slate-500">ステータスごとに依頼を管理</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div class="rounded-xl border border-slate-200 bg-white">
+              <div class="flex items-center justify-between border-b border-slate-100 px-4 py-3">
+                <span class="text-sm font-medium">未着手</span>
+                <span class="rounded-full bg-amber-50 px-2 py-0.5 text-xs font-medium text-amber-700">2</span>
+              </div>
+              <div class="space-y-3 p-3">
+                <div class="rounded-lg border border-slate-200 p-3 text-sm hover:shadow-sm">展示用ブースデザイン</div>
+                <div class="rounded-lg border border-slate-200 p-3 text-sm hover:shadow-sm">メニューブック redesign</div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+              <div class="flex items-center justify-between border-b border-slate-100 px-4 py-3">
+                <span class="text-sm font-medium">進行中</span>
+                <span class="rounded-full bg-blue-50 px-2 py-0.5 text-xs font-medium text-blue-700">2</span>
+              </div>
+              <div class="space-y-3 p-3">
+                <div class="rounded-lg border border-slate-200 p-3 text-sm hover:shadow-sm">コーポレートサイト リニューアル</div>
+                <div class="rounded-lg border border-slate-200 p-3 text-sm hover:shadow-sm">採用LP制作</div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+              <div class="flex items-center justify-between border-b border-slate-100 px-4 py-3">
+                <span class="text-sm font-medium">レビュー</span>
+                <span class="rounded-full bg-violet-50 px-2 py-0.5 text-xs font-medium text-violet-700">1</span>
+              </div>
+              <div class="space-y-3 p-3">
+                <div class="rounded-lg border border-slate-200 p-3 text-sm hover:shadow-sm">商品カタログ制作</div>
+              </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white">
+              <div class="flex items-center justify-between border-b border-slate-100 px-4 py-3">
+                <span class="text-sm font-medium">完了</span>
+                <span class="rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-medium text-emerald-700">1</span>
+              </div>
+              <div class="space-y-3 p-3">
+                <div class="rounded-lg border border-slate-200 p-3 text-sm opacity-70">ロゴ・VI制作</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== カレンダー ===== -->
+        <div id="view-calendar" class="view h-full flex-col p-6 overflow-y-auto bg-slate-50">
+          <div class="mb-6">
+            <h2 class="text-lg font-semibold">カレンダー</h2>
+            <p class="text-sm text-slate-500">納期を確認</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-8 text-center text-slate-500">
+            カレンダービュー（準備中）
+          </div>
+        </div>
+
+        <!-- ===== チーム ===== -->
+        <div id="view-team" class="view h-full flex-col p-6 overflow-y-auto bg-slate-50">
+          <div class="mb-6">
+            <h2 class="text-lg font-semibold">チーム</h2>
+            <p class="text-sm text-slate-500">メンバーと担当状況</p>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="rounded-xl border border-slate-200 bg-white p-5 flex items-center gap-3">
+              <div class="h-11 w-11 rounded-full bg-blue-100 flex items-center justify-center text-sm font-semibold text-blue-700">山</div>
+              <div>
+                <p class="font-medium">山田太郎</p>
+                <p class="text-xs text-slate-500">デザイナー ・ 2件担当</p>
+              </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white p-5 flex items-center gap-3">
+              <div class="h-11 w-11 rounded-full bg-violet-100 flex items-center justify-center text-sm font-semibold text-violet-700">佐</div>
+              <div>
+                <p class="font-medium">佐藤花子</p>
+                <p class="text-xs text-slate-500">ディレクター ・ 2件担当</p>
+              </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white p-5 flex items-center gap-3">
+              <div class="h-11 w-11 rounded-full bg-amber-100 flex items-center justify-center text-sm font-semibold text-amber-700">鈴</div>
+              <div>
+                <p class="font-medium">鈴木一郎</p>
+                <p class="text-xs text-slate-500">デザイナー ・ 1件担当</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== 分析 ===== -->
+        <div id="view-analytics" class="view h-full flex-col p-6 overflow-y-auto bg-slate-50">
+          <div class="mb-6">
+            <h2 class="text-lg font-semibold">分析</h2>
+            <p class="text-sm text-slate-500">制作状況の概要</p>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            <div class="rounded-xl border border-slate-200 bg-white p-5">
+              <p class="text-sm text-slate-500">総依頼数</p>
+              <p class="mt-1 text-2xl font-semibold">6</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white p-5">
+              <p class="text-sm text-slate-500">進行中</p>
+              <p class="mt-1 text-2xl font-semibold text-blue-600">2</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white p-5">
+              <p class="text-sm text-slate-500">完了</p>
+              <p class="mt-1 text-2xl font-semibold text-emerald-600">1</p>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white p-5">
+              <p class="text-sm text-slate-500">期限超過</p>
+              <p class="mt-1 text-2xl font-semibold text-rose-600">1</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== 設定 ===== -->
+        <div id="view-settings" class="view h-full flex-col p-6 overflow-y-auto bg-slate-50">
+          <div class="mb-6">
+            <h2 class="text-lg font-semibold">設定</h2>
+            <p class="text-sm text-slate-500">アプリの設定</p>
+          </div>
+          <div class="rounded-xl border border-slate-200 bg-white p-5 max-w-md">
+            <p class="font-medium">通知</p>
+            <p class="text-sm text-slate-500 mt-1">期限が近づいたら通知する</p>
+          </div>
+        </div>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- モーダル -->
+  <div id="modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-slate-900/40 p-4">
+    <div class="w-full max-w-md rounded-xl bg-white shadow-xl">
+      <div class="flex items-center justify-between border-b px-5 py-4">
+        <h3 class="font-semibold">新規制作依頼</h3>
+        <button onclick="closeModal()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" data-lucide="x" aria-hidden="true" class="lucide lucide-x h-5 w-5 text-slate-400"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg></button>
+      </div>
+      <div class="p-5 space-y-4">
+        <div>
+          <label class="text-sm font-medium">クライアント名</label>
+          <input type="text" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm" placeholder="株式会社アトラス">
+        </div>
+        <div>
+          <label class="text-sm font-medium">依頼タイトル</label>
+          <input type="text" class="mt-1 w-full rounded-lg border border-slate-200 px-3 py-2 text-sm" placeholder="コーポレートサイト リニューアル">
+        </div>
+      </div>
+      <div class="flex justify-end gap-2 border-t px-5 py-3">
+        <button onclick="closeModal()" class="px-4 py-1.5 text-sm text-slate-600">キャンセル</button>
+        <button onclick="closeModal()" class="px-4 py-1.5 text-sm bg-slate-900 text-white rounded-lg">作成</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ========== チャンネル切り替え ==========
+    function switchView(viewName) {
+      document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+      document.getElementById('view-' + viewName).classList.add('active');
+
+      document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+      document.querySelector(`[data-view="${viewName}"]`).classList.add('active');
+
+      const titles = {
+        requests: '制作依頼',
+        board: 'ボード',
+        calendar: 'カレンダー',
+        team: 'チーム',
+        analytics: '分析',
+        settings: '設定'
+      };
+      document.getElementById('page-title').textContent = titles[viewName];
+
+      const badge = document.getElementById('active-badge');
+      if (viewName === 'requests') {
+        badge.classList.remove('hidden');
+      } else {
+        badge.classList.add('hidden');
+      }
+
+      lucide.createIcons();
+    }
+
+    // ========== 依頼データ ==========
+    const requests = [
+      { id: 1, client: "株式会社アトラス", title: "コーポレートサイト リニューアル", due: "10/15", assignee: "山田太郎", initial: "山", status: "進行中", statusKey: "progress", color: "bg-blue-500", overdue: false },
+      { id: 2, client: "ブルーオーシャン商事", title: "商品カタログ制作", due: "9/25", assignee: "佐藤花子", initial: "佐", status: "レビュー", statusKey: "review", color: "bg-violet-500", overdue: false },
+      { id: 3, client: "テクノロジー研究所", title: "展示用ブースデザイン", due: "12/1", assignee: "鈴木一郎", initial: "鈴", status: "未着手", statusKey: "todo", color: "bg-amber-500", overdue: false },
+      { id: 4, client: "グリーンフィールド農園", title: "ロゴ・VI制作", due: "8/30", assignee: "山田太郎", initial: "山", status: "完了", statusKey: "done", color: "bg-emerald-500", overdue: true, overdueText: "19日超過" },
+      { id: 5, client: "株式会社アトラス", title: "採用LP制作", due: "9/22", assignee: "佐藤花子", initial: "佐", status: "進行中", statusKey: "progress", color: "bg-blue-500", overdue: false },
+      { id: 6, client: "シティカフェ", title: "メニューブック redesign", due: "11/10", assignee: "未定", initial: "?", status: "未着手", statusKey: "todo", color: "bg-slate-400", overdue: false }
+    ];
+
+    const statusStyles = {
+      "進行中": "bg-blue-50 text-blue-700 ring-blue-600/20",
+      "レビュー": "bg-violet-50 text-violet-700 ring-violet-600/20",
+      "未着手": "bg-amber-50 text-amber-700 ring-amber-600/20",
+      "完了": "bg-emerald-50 text-emerald-700 ring-emerald-600/20"
+    };
+
+    let selectedId = null;
+    let currentFilter = "all";
+
+    function renderList() {
+      const list = document.getElementById("request-list");
+      if (!list) return;
+      const filtered = currentFilter === "all" ? requests : requests.filter(r => r.statusKey === currentFilter);
+
+      list.innerHTML = filtered.map(r => `
+        <button onclick="selectRequest(${r.id})" class="w-full border-b border-slate-100 px-4 py-3.5 text-left transition hover:bg-slate-50 ${selectedId === r.id ? 'bg-slate-50' : ''}">
+          <div class="flex items-start justify-between gap-3">
+            <div class="min-w-0 flex-1">
+              <p class="text-xs text-slate-500">${r.client}</p>
+              <p class="mt-0.5 truncate text-sm font-medium text-slate-900">${r.title}</p>
+            </div>
+            <div class="flex flex-col items-end gap-1.5 shrink-0">
+              <span class="text-xs ${r.overdue ? 'text-rose-600 font-medium' : 'text-slate-500'}">
+                ${r.due}${r.overdue ? ` (${r.overdueText})` : ''}
+              </span>
+              <div class="flex items-center gap-2">
+                <div class="flex h-6 w-6 items-center justify-center rounded-full ${r.color} bg-opacity-15 text-[10px] font-semibold text-slate-700">${r.initial}</div>
+                <span class="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium ring-1 ring-inset ${statusStyles[r.status]}">
+                  <span class="h-1.5 w-1.5 rounded-full ${r.status === '完了' ? 'bg-emerald-500' : r.status === '進行中' ? 'bg-blue-500' : r.status === 'レビュー' ? 'bg-violet-500' : 'bg-amber-500'}"></span>
+                  ${r.status}
+                </span>
+              </div>
+            </div>
+          </div>
+        </button>
+      `).join("");
+    }
+
+    function selectRequest(id) {
+      selectedId = id;
+      const r = requests.find(x => x.id === id);
+      renderList();
+
+      const panel = document.getElementById("detail-panel");
+      panel.innerHTML = `
+        <div class="flex h-full flex-col overflow-y-auto">
+          <div class="border-b border-slate-200 bg-white px-6 py-5">
+            <div class="flex items-start justify-between">
+              <div>
+                <p class="text-xs text-slate-500">${r.client}</p>
+                <h2 class="mt-1 text-lg font-semibold text-slate-900">${r.title}</h2>
+              </div>
+              <span class="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-medium ring-1 ring-inset ${statusStyles[r.status]}">${r.status}</span>
+            </div>
+          </div>
+          <div class="flex-1 space-y-6 p-6">
+            <div class="grid grid-cols-2 gap-4">
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <p class="text-xs font-medium text-slate-500">担当者</p>
+                <div class="mt-2 flex items-center gap-2">
+                  <div class="flex h-8 w-8 items-center justify-center rounded-full ${r.color} bg-opacity-15 text-xs font-semibold">${r.initial}</div>
+                  <span class="text-sm font-medium">${r.assignee}</span>
+                </div>
+              </div>
+              <div class="rounded-xl border border-slate-200 bg-white p-4">
+                <p class="text-xs font-medium text-slate-500">納期</p>
+                <p class="mt-2 text-sm font-medium ${r.overdue ? 'text-rose-600' : ''}">${r.due}${r.overdue ? '（超過）' : ''}</p>
+              </div>
+            </div>
+            <div class="rounded-xl border border-slate-200 bg-white p-4">
+              <p class="text-xs font-medium text-slate-500 mb-3">ステータス変更</p>
+              <div class="flex flex-wrap gap-2">
+                ${["未着手", "進行中", "レビュー", "完了"].map(s => `
+                  <button class="rounded-lg border px-3 py-1.5 text-xs font-medium transition ${r.status === s ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 text-slate-600 hover:bg-slate-50'}">${s}</button>
+                `).join("")}
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+      lucide.createIcons();
+    }
+
+    // タブ切り替え
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        document.querySelectorAll(".tab-btn").forEach(b => {
+          b.classList.remove("text-slate-900");
+          b.classList.add("text-slate-500");
+          const bar = b.querySelector(".absolute");
+          if (bar) bar.remove();
+        });
+        btn.classList.add("text-slate-900");
+        btn.classList.remove("text-slate-500");
+        const bar = document.createElement("span");
+        bar.className = "absolute bottom-0 left-0 right-0 h-0.5 bg-slate-900 rounded-full";
+        btn.appendChild(bar);
+        currentFilter = btn.dataset.filter;
+        selectedId = null;
+        renderList();
+      });
+    });
+
+    function openModal() {
+      document.getElementById("modal").classList.remove("hidden");
+      document.getElementById("modal").classList.add("flex");
+    }
+    function closeModal() {
+      document.getElementById("modal").classList.add("hidden");
+      document.getElementById("modal").classList.remove("flex");
+    }
+
+    // 初期化
+    renderList();
+    lucide.createIcons();
+  </script>
+
+<script async="" src="./StudioOps_files/hud" data-nf-variant="public" data-netlify-site-id="d02e0e40-e15d-470b-81f7-8f6c34504550" data-app-host="app.netlify.com"></script>
+<iframe id="nl-badge-frame" title="Powered by Netlify" style="position: fixed; bottom: 0px; right: 0px; border: 0px; margin: 0px; padding: 0px; background: transparent; color-scheme: dark; z-index: 2147483645; width: 197px; height: 64px; clip-path: path(&quot;M 3 3 H 184 V 51 H 3 Z&quot;);" data-nl-ready="1" src="./StudioOps_files/saved_resource.html"></iframe></body></html>

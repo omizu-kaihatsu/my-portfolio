@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>問い合わせ分類・返信案ツール | 業務効率化デモ</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-slate-200">
+    <div class="max-w-2xl mx-auto px-5 py-4 flex items-center justify-between">
+      <div class="font-semibold text-lg tracking-tight">問い合わせ分類・返信案ツール</div>
+      <span class="text-xs text-slate-400 bg-slate-100 px-2.5 py-1 rounded-full">Portfolio Demo</span>
+    </div>
+  </header>
+
+  <main class="max-w-2xl mx-auto px-5 py-10">
+
+    <!-- Intro -->
+    <section class="mb-8">
+      <h1 class="text-2xl font-bold text-slate-900 mb-3">問い合わせ内容を貼り付けるだけで、<br>分類と返信案を整理します</h1>
+      <p class="text-sm text-slate-600 leading-relaxed mb-4">
+        顧客対応の効率化をイメージしたポートフォリオ用デモです。<br>
+        実際の案件では、貴社の業務に合わせて分類ルールや返信トーンをカスタマイズします。
+      </p>
+      <div class="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 text-xs text-amber-900">
+        現在はデモです。入力内容を簡易ルールで分類し、返信案のサンプルを表示しています。
+      </div>
+    </section>
+
+    <!-- Input -->
+    <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 mb-6">
+      <div class="flex items-center justify-between mb-4">
+        <h2 class="font-semibold text-base">問い合わせ内容</h2>
+        <button type="button" onclick="fillSample()" class="text-xs text-teal-700 hover:text-teal-900 underline underline-offset-2">
+          入力例を試す
+        </button>
+      </div>
+
+      <textarea id="inquiry" rows="6" placeholder="ここに問い合わせ内容を貼り付けてください&#10;&#10;例：商品が届かないので確認してほしい、返品したい、など"
+        class="w-full border border-slate-300 rounded-lg px-3.5 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-teal-500 focus:border-teal-500"></textarea>
+
+      <button onclick="analyzeInquiry()"
+        class="mt-4 w-full bg-teal-600 hover:bg-teal-700 text-white font-medium py-3 rounded-xl transition text-sm">
+        分類と返信案を出す
+      </button>
+    </section>
+
+    <!-- Result -->
+    <section id="result" class="hidden space-y-5">
+
+      <!-- 分類結果 -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+        <h3 class="font-semibold text-base mb-4">分類結果</h3>
+        <div class="grid grid-cols-2 gap-3 mb-4">
+          <div class="bg-slate-50 rounded-xl p-3.5">
+            <div class="text-xs text-slate-500 mb-1">カテゴリ</div>
+            <div id="category" class="font-semibold text-slate-900"></div>
+          </div>
+          <div class="bg-slate-50 rounded-xl p-3.5">
+            <div class="text-xs text-slate-500 mb-1">優先度</div>
+            <div id="priority" class="font-semibold"></div>
+          </div>
+        </div>
+        <div class="text-sm text-slate-600">
+          <span class="text-slate-500">担当目安：</span>
+          <span id="assignee"></span>
+        </div>
+      </div>
+
+      <!-- 返信案 -->
+      <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6">
+        <h3 class="font-semibold text-base mb-3">返信案（下書き）</h3>
+        <div id="reply" class="bg-slate-50 rounded-xl p-4 text-sm leading-relaxed text-slate-700 whitespace-pre-wrap"></div>
+        <p class="mt-3 text-xs text-slate-400">※デモ用のサンプルです。実際はトーンや社名を合わせて生成します。</p>
+      </div>
+
+      <!-- ポイント -->
+      <div class="bg-teal-50 border border-teal-100 rounded-2xl p-5">
+        <h3 class="font-semibold text-sm mb-2 text-teal-900">このツールで効率化できること</h3>
+        <ul class="text-sm text-teal-800 space-y-1">
+          <li>・問い合わせの一次仕分け時間を短縮</li>
+          <li>・返信の下書き作成を支援</li>
+          <li>・対応品質のばらつきを抑える</li>
+        </ul>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center pt-2">
+        <p class="text-sm text-slate-600 mb-3">こうしたツールを、実際の業務に合わせて作れます。</p>
+        <a href="#" class="inline-block bg-teal-600 hover:bg-teal-700 text-white text-sm font-medium px-5 py-2.5 rounded-xl transition">
+          業務改善について相談する
+        </a>
+      </div>
+    </section>
+
+    <!-- 実装内容 -->
+    <section class="mt-12 pt-6 border-t border-slate-200">
+      <h3 class="text-xs font-semibold text-slate-400 mb-2">このデモで実装していること</h3>
+      <p class="text-xs text-slate-400 leading-relaxed">
+        ヒアリング不要で使える簡易ツールの設計 / 入力内容の分類ロジック / 返信案の構造化 / レスポンシブUI / HTML・Tailwind・JavaScript実装
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="text-center text-xs text-slate-400 py-6">
+    Portfolio Demo · 業務効率化
+  </footer>
+
+  <script>
+    function fillSample() {
+      document.getElementById('inquiry').value = '先日注文した商品がまだ届きません。注文番号はA-12345です。いつ頃届くか教えてください。急ぎなので対応をお願いします。';
+    }
+
+    function analyzeInquiry() {
+      const text = document.getElementById('inquiry').value.trim();
+      if (!text) {
+        alert('問い合わせ内容を入力してください');
+        return;
+      }
+
+      const lower = text.toLowerCase();
+      let category = 'その他';
+      let priority = '中';
+      let assignee = '一般対応';
+      let reply = '';
+
+      // 簡易分類
+      if (lower.includes('届かない') || lower.includes('届きません') || lower.includes('配送') || lower.includes('発送')) {
+        category = '配送・納期';
+        priority = '高';
+        assignee = '物流・カスタマーサポート';
+        reply = `お問い合わせいただきありがとうございます。\n\nご注文の件、大変ご不便をおかけしており申し訳ございません。\n注文番号を確認の上、配送状況を調査いたします。\n\n恐れ入りますが、今しばらくお待ちください。\n調査結果が分かり次第、改めてご連絡いたします。`;
+      } else if (lower.includes('返品') || lower.includes('交換') || lower.includes('キャンセル')) {
+        category = '返品・交換・キャンセル';
+        priority = '中';
+        assignee = 'カスタマーサポート';
+        reply = `お問い合わせいただきありがとうございます。\n\n返品・交換のご希望を承知いたしました。\n手続き方法をご案内いたしますので、注文番号と該当商品名を教えていただけますでしょうか。\n\nご確認のほどよろしくお願いいたします。`;
+      } else if (lower.includes('請求') || lower.includes('支払い') || lower.includes('料金') || lower.includes('領収書')) {
+        category = '請求・支払い';
+        priority = '中';
+        assignee = '経理・サポート';
+        reply = `お問い合わせいただきありがとうございます。\n\nご請求・お支払いの件について確認いたします。\n注文番号またはお支払い時の情報を教えていただけますとスムーズです。\n\n確認後、改めてご連絡いたします。`;
+      } else if (lower.includes('使い方') || lower.includes('操作') || lower.includes('ログイン') || lower.includes('設定')) {
+        category = '使い方・操作方法';
+        priority = '低';
+        assignee = 'サポート';
+        reply = `お問い合わせいただきありがとうございます。\n\n操作方法についてのご質問を承知いたしました。\n具体的にどの画面・操作でお困りでしょうか。\n詳細を教えていただけますと、より正確にご案内できます。\n\nよろしくお願いいたします。`;
+      } else {
+        category = 'その他・一般問い合わせ';
+        priority = '中';
+        assignee = '一般対応';
+        reply = `お問い合わせいただきありがとうございます。\n\n内容を確認の上、担当よりご連絡いたします。\n今しばらくお待ちくださいますようお願いいたします。`;
+      }
+
+      // 優先度の色
+      const priorityEl = document.getElementById('priority');
+      priorityEl.textContent = priority;
+      priorityEl.className = 'font-semibold ' + (priority === '高' ? 'text-red-600' : priority === '中' ? 'text-amber-600' : 'text-slate-600');
+
+      document.getElementById('category').textContent = category;
+      document.getElementById('assignee').textContent = assignee;
+      document.getElementById('reply').textContent = reply;
+
+      document.getElementById('result').classList.remove('hidden');
+      document.getElementById('result').scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
